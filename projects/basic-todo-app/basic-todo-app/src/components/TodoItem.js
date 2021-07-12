@@ -4,7 +4,7 @@ import { toggleTodo } from '../redux/actions';
 
 const TodoItem = ({ todo }) => {
     return (
-        <li>
+        <li onClick={toggleTodo}>
             {todo && todo.completed ? "DONE" : "DONEN'T"}{"  "}
             <span>
                 {todo.content}
