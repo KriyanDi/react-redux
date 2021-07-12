@@ -8,9 +8,7 @@ const Filters = () => {
                 const currFilter = FILTERS[filterKey];
                 return (
                     <span key={currFilter}>
-                        <h3 className="ui header">
-                        {currFilter}
-                        </h3>
+                        {currFilter}{" "}
                     </span>
                 );
             })}
