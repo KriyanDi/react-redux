@@ -3,7 +3,7 @@ import { FILTERS } from "../../constants";
 
 const initialState = FILTERS.ALL;
 
-const filter = (staet = initialState, action) => {
+const filter = (state = initialState, action) => {
     switch (action.type) {
         case SET_FILTER: {
             return action.payload.filter;
