@@ -7,7 +7,7 @@ const AddTodo = () => {
                 <input type="text" placeholder="Add Todo..."/>
             </div>
             <span>
-                <button class="ui primary button">Save</button>
+                <button className="ui primary button">Save</button>
             </span>
         </div>
     );
