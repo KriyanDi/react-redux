@@ -1,5 +1,5 @@
 import React from 'react';
-import Todo from './Todo'
+import TodoItem from './TodoItem'
 import { connect } from 'react-redux';
 import { selectTodos } from "../redux/selectors";
 
@@ -8,7 +8,7 @@ const TodoList = ({ todos }) => {
         <ul>
             {todos && todos.length
                 ? todos.map(todo => {
-                    return <Todo key={`todo-${todo.id}`} todo={todo} />;
+                    return <TodoItem key={`todo-${todo.id}`} todo={todo} />;
                 })
                 : "All done!"}
         </ul>
