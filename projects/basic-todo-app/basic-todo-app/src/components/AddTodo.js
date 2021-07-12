@@ -12,15 +12,13 @@ const AddTodo = (props) => {
                     type="text"
                     placeholder="Add Todo..."
                     onChange={event => setContent(event.target.value)}
-                    value={ content}/>
+                    value={content}
+                />
             </div>
             <span>
                 <button
                     className="ui primary button"
-                    onClick={() => {
-                        props.addTodo(content);
-                        setContent("");
-                    } }
+                    onClick={content ? { addTodo(content) setContent("")}: }
                 >
                     Save
                 </button>
