@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoItem from './TodoItem'
 import { connect } from 'react-redux';
-import { selectTodos } from "../redux/selectors";
+import { selectTodoByFilter, selectTodos } from "../redux/selectors";
 
 const TodoList = ({ todos }) => {
     return (
@@ -15,4 +15,10 @@ const TodoList = ({ todos }) => {
     );
 }
 
-export default connect(state => ({ todos: selectTodos(state) }))(TodoList);
+const mapStateToProps = state => {
+    const { filter } = state;
+    const todos = selectTodoByFilter(state, filter);
+    return { todos };
+}
+
+export default connect(mapStateToProps)(TodoList);
