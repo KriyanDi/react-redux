@@ -1,16 +1,17 @@
-import React from 'react';
+import React from "react";
 import { connect } from "react-redux";
-import { toggleTodo } from '../redux/actions';
+import { toggleTodo } from "../redux/actions";
 
-const TodoItem = ({ todo }) => {
-    return (
-        <li onClick={toggleTodo}>
-            {todo && todo.completed ? "DONE" : "DONEN'T"}{"  "}
-            <span>
-                {todo.content}
-            </span>
-        </li>
-    );
-}
+const TodoItem = (props) => {
+  return (
+    <li onClick={() => props.toggleTodo(props.todo.id)}>
+      {props.todo && props.todo.completed ? "✔️" : "❌"}
+      {"  "}
+      <span>
+        {props.todo.content} - {props.todo.id}
+      </span>
+    </li>
+  );
+};
 
 export default connect(null, { toggleTodo })(TodoItem);
