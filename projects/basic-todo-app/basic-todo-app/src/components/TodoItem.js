@@ -7,9 +7,7 @@ const TodoItem = (props) => {
     <li onClick={() => props.toggleTodo(props.todo.id)}>
       {props.todo && props.todo.completed ? "✔️" : "❌"}
       {"  "}
-      <span>
-        {props.todo.content} - {props.todo.id}
-      </span>
+      <span>{props.todo.content}</span>
     </li>
   );
 };
