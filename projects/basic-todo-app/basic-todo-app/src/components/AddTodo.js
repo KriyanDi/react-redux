@@ -11,23 +11,23 @@ const AddTodo = (props) => {
   };
 
   return (
-    <div>
-      <div className="ui input">
-        <input
-          type="text"
-          placeholder="Add Todo..."
-          onChange={(event) => setContent(event.target.value)}
-          value={content}
-        />
+    <div className="field">
+      <div className="ui segment">
+        <div className="ui action input">
+          <input
+            type="text"
+            placeholder="Add Todo..."
+            onChange={(event) => setContent(event.target.value)}
+            value={content}
+          />
+          <button
+            className="ui primary button"
+            onClick={content ? () => saveHandlerOnClick(content) : () => {}}
+          >
+            Save
+          </button>
+        </div>
       </div>
-      <span>
-        <button
-          className="ui primary button"
-          onClick={content ? () => saveHandlerOnClick(content) : () => {}}
-        >
-          Save
-        </button>
-      </span>
     </div>
   );
 };
